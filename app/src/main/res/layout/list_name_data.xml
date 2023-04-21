@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="15dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/bg_dashbaord"
+                android:text="View Plan"
+                android:textColor="@color/blue"
+                app:backgroundTint="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/txtSpouse"
+                app:layout_constraintTop_toTopOf="@id/txtName"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/txtSpouse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:text="@{model.data.userRealation}"
+                android:textColor="@color/green"
+
+                android:textSize="13sp"
+                app:layout_constraintBottom_toTopOf="@id/txtNumber"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txtFirstLast"
+                app:layout_constraintTop_toBottomOf="@id/txtName" />
+
+            <TextView
+                android:id="@+id/txtNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:ellipsize="end"
+                android:text="@{model.data.userContact}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/gsy"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@id/txtFirstLast"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txtFirstLast"
+                app:layout_constraintTop_toBottomOf="@id/txtSpouse" />
+
+            <TextView
+                android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:text="@{model.data.userFullName}"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@id/txtSpouse"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txtFirstLast"
+
+
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtFirstLast"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_textview"
+                android:ellipsize="end"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@{model.data.userLastName  }"
+
+                android:textAlignment="center"
+                android:textColor="@color/blue"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.a07demo.detail.UserDetails" />
+
+    </data>
+
+
+</layout>
